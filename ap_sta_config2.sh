@@ -206,7 +206,7 @@ server=8.8.8.8
 server=8.8.4.4
 domain-needed
 bogus-priv
-dhcp-range=${AP_IP_BEGIN}.2,${AP_IP_BEGIN}.254,24h
+dhcp-range=${AP_IP_BEGIN}.2,${AP_IP_BEGIN}.254,255.255.255.0,24h
 dhcp-option=3,${AP_IP}
 EOF
 
