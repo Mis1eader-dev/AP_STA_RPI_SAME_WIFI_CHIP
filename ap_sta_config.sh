@@ -168,7 +168,7 @@ fi
 
 WIFI_MODE=${ARG_WIFI_MODE:-'g'}
 COUNTRY_CODE=${ARG_COUNTRY_CODE:-'FR'}
-AP_IP=${ARG_AP_IP:-'192.168.10.1'}
+AP_IP=${ARG_AP_IP:-'192.168.0.1'}
 AP_IP_BEGIN=$(echo "${AP_IP}" | sed -e 's/\.[0-9]\{1,3\}$//g')
 MAC_ADDRESS="$(cat /sys/class/net/wlan0/address)"
 
@@ -231,7 +231,7 @@ bind-interfaces
 server=8.8.8.8
 domain-needed
 bogus-priv
-dhcp-range=${AP_IP_BEGIN}.50,${AP_IP_BEGIN}.150,12h
+dhcp-range=${AP_IP_BEGIN}.2,${AP_IP_BEGIN}.254,255.255.255.0,24h
 
 EOF
 fi
